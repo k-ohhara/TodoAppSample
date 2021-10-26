@@ -10,15 +10,15 @@ import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_todo_list.*
 
 /**
- * 未完成タスクの一覧を表示するフラグメント
+ * 完了タスク一覧を表示するフラグメント
  */
-class TodoListFragment : Fragment() {
+class DoneListFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_todo_list, container, false)
+        return inflater.inflate(R.layout.fragment_done_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -33,14 +33,14 @@ class TodoListFragment : Fragment() {
         // TODO ダミーデータ
         val tasks = arrayListOf<Todo>()
         // ダミーデータをセットしたタスク
-        val task1 = Todo(0, "未完了タスク１", "", "", "2020/05/21", "", 0)
-        val task2 = Todo(0, "未完了タスク２", "", "", "2020/05/31", "", 0)
-        val task3 = Todo(0, "未完了タスク３", "", "", "2020/06/21", "", 0)
+        val task1 = Todo(0, "完了タスク１", "", "", "2020/05/21", "", 0)
+        val task2 = Todo(0, "完了タスク２", "", "", "2020/05/31", "", 0)
+        val task3 = Todo(0, "完了タスク３", "", "", "2020/06/21", "", 0)
         // ダミーデータのタスクをセットする
         tasks.add(task1)
         tasks.add(task2)
         tasks.add(task3)
-        // リストビューを表示する
+        // リストビューを表示
         todoListView.adapter = TodoAdapter(tasks, object : TaskItemListener {
             override fun onEditIconClick(task: Todo) {
                 // トースト表示
@@ -55,7 +55,7 @@ class TodoListFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() = TodoListFragment()
+        fun newInstance() = DoneListFragment()
     }
 
 }

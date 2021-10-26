@@ -10,5 +10,10 @@ class CreateTodoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_todo)
+
+        // このアクティビティにタスク作成画面のフラグメントを表示する
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.container, CreateTodoFragment.newInstance())
+        }.commit()
     }
 }

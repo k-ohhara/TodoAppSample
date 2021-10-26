@@ -4,4 +4,9 @@
     <string name="todoDate">2021/10/03</string>
     <string name="imageView">ImageView</string>
     <string name="fab">FAB</string>
+    <string name="create">作成</string>
+    <string name="taskName">タスク名</string>
+    <string name="hint"> </string>
+    <string name="taskDescription">メモ</string>
+    <string name="taskExpired">期限</string>
 </resources>
