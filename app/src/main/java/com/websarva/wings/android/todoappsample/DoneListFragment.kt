@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.fragment_todo_list.*
 
@@ -30,28 +29,6 @@ class DoneListFragment : Fragment() {
             startActivity(Intent(context, CreateTodoActivity::class.java))
         }
 
-        // TODO ダミーデータ
-        val tasks = arrayListOf<Todo>()
-        // ダミーデータをセットしたタスク
-        val task1 = Todo(0, "完了タスク１", "", "", "2020/05/21", "", 0)
-        val task2 = Todo(0, "完了タスク２", "", "", "2020/05/31", "", 0)
-        val task3 = Todo(0, "完了タスク３", "", "", "2020/06/21", "", 0)
-        // ダミーデータのタスクをセットする
-        tasks.add(task1)
-        tasks.add(task2)
-        tasks.add(task3)
-        // リストビューを表示
-        todoListView.adapter = TodoAdapter(tasks, object : TaskItemListener {
-            override fun onEditIconClick(task: Todo) {
-                // トースト表示
-                Toast.makeText(activity, "onEditIconClick", Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onCheckIconClick(task: Todo) {
-                // トースト表示
-                Toast.makeText(activity, "onCheckIconClick", Toast.LENGTH_SHORT).show()
-            }
-        })
     }
 
     companion object {
