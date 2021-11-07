@@ -16,4 +16,8 @@ class CreateTodoActivity : AppCompatActivity() {
             replace(R.id.container, CreateTodoFragment.newInstance())
         }.commit()
     }
+
+    companion object {
+        fun newInstance() = CreateTodoActivity()
+    }
 }

@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.websarva.wings.android.todoappsample.databinding.FragmentTodoListBinding
 import kotlinx.android.synthetic.main.fragment_todo_list.*
 
@@ -16,19 +18,21 @@ import kotlinx.android.synthetic.main.fragment_todo_list.*
 class TodoListFragment : Fragment() {
 
     /** ViewDataBinding */
-    private lateinit var viewDataBinding: FragmentTodoListBinding
+    private lateinit var binding: FragmentTodoListBinding
 
-    /** TodoListViewModelクラス */
-    private val todoListViewModel: TodoListViewModel by viewModels()
-
-    /** TodoAdapterクラス */
-    private lateinit var todoAdapter: TodoAdapter
+    /** CreateTodoViewModelクラス */
+    private val mCreateTodoViewModel: CreateTodoViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_todo_list, container, false)
+    ): View {
+        //inflate
+        binding =
+            DataBindingUtil.inflate(
+                inflater, R.layout.fragment_todo_list, container, false
+            )
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,10 +44,15 @@ class TodoListFragment : Fragment() {
             startActivity(Intent(context, CreateTodoActivity::class.java))
         }
 
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+        with(binding) {
+            createTodoViewModel = mCreateTodoViewModel
+            todoListView.adapter = TodoAdapter(ArrayList(0))
+            lifecycleOwner = this@TodoListFragment
+            (createTodoViewModel as CreateTodoViewModel).items.observe(viewLifecycleOwner, Observer {
+                val adapter = todoListView.adapter as TodoAdapter
+                adapter.updateItems(it)
+            })
+        }
 
 //        // ListViewにAdapterをセット
 //        val todoListViewModel = viewDataBinding.todoListViewModel
@@ -52,14 +61,13 @@ class TodoListFragment : Fragment() {
 //            todoAdapter = TodoAdapter(ArrayList(0))
 //            viewDataBinding.todoListView.adapter = todoAdapter
 //        }
-//
     }
 
     override fun onResume() {
         super.onResume()
 
         // リストに表示する内容を作成
-        todoListViewModel.loadTodoListItems()
+//        mTodoListViewModel.loadTodoListItems()
     }
 
     companion object {

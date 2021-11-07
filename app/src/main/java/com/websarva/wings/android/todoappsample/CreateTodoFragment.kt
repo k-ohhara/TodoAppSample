@@ -24,29 +24,6 @@ class CreateTodoFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_create_todo, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        // taskName
-        val taskName = view.findViewById<EditText>(R.id.taskName)
-
-        // taskExpired
-        val taskExpired = view.findViewById<DatePicker>(R.id.taskExpired)
-        // format
-        val format = SimpleDateFormat("yyyy/MM/dd", Locale.JAPAN)
-
-        // taskDescription
-        val taskDescription = view.findViewById<EditText>(R.id.taskDescription)
-
-        // 作成ボタン押下時
-        createButton.setOnClickListener {
-            // 入力された値をログ出力
-            Log.d("CreateTodoFragment", "タスク名：${taskName.text}")
-            Log.d("CreateTodoFragment", "期限：${format.format(taskExpired.dayOfMonth)}")
-            Log.d("CreateTodoFragment", "メモ：${taskDescription.text}")
-        }
-    }
-
     companion object {
         fun newInstance() = CreateTodoFragment()
     }

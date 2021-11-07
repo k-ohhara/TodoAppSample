@@ -32,15 +32,21 @@ class TodoAdapter(private var tasks: List<Todo>) : BaseAdapter() {
             DataBindingUtil.getBinding(convertView) ?: throw IllegalStateException()
         }
 
-        with(binding) {
-            // バインディング変数にデータクラスを入れる
-            todo = tasks[position]
-            // Bindingオブジェクトに即反映
-            executePendingBindings()
-        }
+        binding.todo = getItem(position)
+        // 即時バインド
+        binding.executePendingBindings()
 
         // Viewを取り出して返却する
         return binding.root
+    }
+
+    /**
+     * リストを更新する
+     */
+    fun updateItems(newItems: List<Todo>) {
+        tasks = newItems
+        // 変更の通知
+        notifyDataSetChanged()
     }
 
 }

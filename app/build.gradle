@@ -48,6 +48,8 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     // CardView
     implementation 'androidx.cardview:cardview:1.0.0'
+    // LiveData
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     // viewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     // Fragment-ktx

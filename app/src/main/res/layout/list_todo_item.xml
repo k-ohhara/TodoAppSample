@@ -9,6 +9,10 @@
         <variable
             name="todo"
             type="com.websarva.wings.android.todoappsample.Todo" />
+
+        <variable
+            name="createTodoViewModel"
+            type="com.websarva.wings.android.todoappsample.CreateTodoViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
