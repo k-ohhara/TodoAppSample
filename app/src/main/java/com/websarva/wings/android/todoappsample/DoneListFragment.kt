@@ -26,7 +26,7 @@ class DoneListFragment : Fragment() {
         // タスク追加ボタン押下時
         addTodoButton.setOnClickListener {
             // タスク作成画面へ遷移する
-            startActivity(Intent(context, CreateTodoActivity::class.java))
+            startActivity(Intent(context, TaskActivity::class.java))
         }
 
     }

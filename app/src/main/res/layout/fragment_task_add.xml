@@ -5,8 +5,8 @@
     <data>
 
         <variable
-            name="createTodoViewModel"
-            type="com.websarva.wings.android.todoappsample.CreateTodoViewModel" />
+            name="taskAddViewModel"
+            type="com.websarva.wings.android.todoappsample.TaskAddViewModel" />
     </data>
 
     <LinearLayout
@@ -48,7 +48,7 @@
                         android:autofillHints=""
                         android:hint="@string/hint"
                         android:inputType="text"
-                        android:text="@{createTodoViewModel.taskName}" />
+                        android:text="@={taskAddViewModel.taskName}" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -74,7 +74,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:calendarViewShown="false"
-                        android:datePickerMode="spinner" />
+                        android:datePickerMode="spinner"
+                        android:day="@={taskAddViewModel.day}"
+                        android:month="@={taskAddViewModel.month}"
+                        android:onDateChanged="@{(v, year, month, day) -> taskAddViewModel.onDateChanged(year, month, day)}"
+                        android:year="@={taskAddViewModel.year}" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -101,7 +105,7 @@
                         android:autofillHints=""
                         android:hint="@string/hint"
                         android:inputType="text"
-                        android:text="@{createTodoViewModel.description}" />
+                        android:text="@={taskAddViewModel.description}" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -117,7 +121,7 @@
                 android:id="@+id/createButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:onClick="@{() -> createTodoViewModel.onCreateButtonClick()}"
+                android:onClick="@{() -> taskAddViewModel.onAddButtonClick()}"
                 android:text="@string/create"
                 app:backgroundTint="@color/dodger_blue" />
         </LinearLayout>

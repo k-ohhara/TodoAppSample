@@ -6,18 +6,18 @@ import androidx.appcompat.app.AppCompatActivity
 /**
  * タスク作成画面
  */
-class CreateTodoActivity : AppCompatActivity() {
+class TaskActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_create_todo)
+        setContentView(R.layout.activity_task)
 
         // このアクティビティにタスク作成画面のフラグメントを表示する
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.container, CreateTodoFragment.newInstance())
+            replace(R.id.container, TaskAddFragment.newInstance())
         }.commit()
     }
 
     companion object {
-        fun newInstance() = CreateTodoActivity()
+        fun newInstance() = TaskActivity()
     }
 }

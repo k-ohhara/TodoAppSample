@@ -21,13 +21,13 @@ class TodoListFragment : Fragment() {
     private lateinit var binding: FragmentTodoListBinding
 
     /** CreateTodoViewModelクラス */
-    private val mCreateTodoViewModel: CreateTodoViewModel by viewModels()
+    private val mTaskAddViewModel: TaskAddViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        //inflate
+        // Viewのinflate
         binding =
             DataBindingUtil.inflate(
                 inflater, R.layout.fragment_todo_list, container, false
@@ -41,33 +41,19 @@ class TodoListFragment : Fragment() {
         // タスク追加ボタン押下時
         addTodoButton.setOnClickListener {
             // タスク作成画面へ遷移する
-            startActivity(Intent(context, CreateTodoActivity::class.java))
+            startActivity(Intent(context, TaskActivity::class.java))
         }
 
         with(binding) {
-            createTodoViewModel = mCreateTodoViewModel
+            createTodoViewModel = mTaskAddViewModel
             todoListView.adapter = TodoAdapter(ArrayList(0))
             lifecycleOwner = this@TodoListFragment
-            (createTodoViewModel as CreateTodoViewModel).items.observe(viewLifecycleOwner, Observer {
+            (createTodoViewModel as TaskAddViewModel).items.observe(viewLifecycleOwner, Observer {
                 val adapter = todoListView.adapter as TodoAdapter
                 adapter.updateItems(it)
             })
         }
 
-//        // ListViewにAdapterをセット
-//        val todoListViewModel = viewDataBinding.todoListViewModel
-//        if (todoListViewModel != null) {
-//            // ViewModelがDataBindingに存在する場合のみ
-//            todoAdapter = TodoAdapter(ArrayList(0))
-//            viewDataBinding.todoListView.adapter = todoAdapter
-//        }
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        // リストに表示する内容を作成
-//        mTodoListViewModel.loadTodoListItems()
     }
 
     companion object {
