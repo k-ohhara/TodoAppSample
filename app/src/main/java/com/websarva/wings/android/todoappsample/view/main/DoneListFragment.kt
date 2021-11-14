@@ -1,4 +1,4 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.view.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.websarva.wings.android.todoappsample.R
+import com.websarva.wings.android.todoappsample.view.detail.TaskActivity
 import kotlinx.android.synthetic.main.fragment_todo_list.*
 
 /**

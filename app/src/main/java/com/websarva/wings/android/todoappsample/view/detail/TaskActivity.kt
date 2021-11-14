@@ -1,7 +1,8 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.view.detail
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.websarva.wings.android.todoappsample.R
 
 /**
  * タスク作成画面
@@ -15,9 +16,5 @@ class TaskActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.container, TaskAddFragment.newInstance())
         }.commit()
-    }
-
-    companion object {
-        fun newInstance() = TaskActivity()
     }
 }

@@ -1,8 +1,9 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.websarva.wings.android.todoappsample.appif.Todo
 
 /**
  * 未完成タスク一覧のViewModelクラス

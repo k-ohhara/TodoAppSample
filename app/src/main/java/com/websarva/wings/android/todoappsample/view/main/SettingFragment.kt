@@ -1,10 +1,11 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.view.main
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.websarva.wings.android.todoappsample.R
 
 /**
  * 設定画面を表示するフラグメント

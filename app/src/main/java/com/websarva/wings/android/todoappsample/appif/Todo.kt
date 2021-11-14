@@ -1,4 +1,4 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.appif
 
 /**
  * タスクのデータクラス

@@ -1,4 +1,4 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.view.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.websarva.wings.android.todoappsample.R
 import com.websarva.wings.android.todoappsample.databinding.FragmentTaskAddBinding
+import com.websarva.wings.android.todoappsample.viewmodel.TaskAddViewModel
 
 /**
  * タスク作成画面のフラグメント

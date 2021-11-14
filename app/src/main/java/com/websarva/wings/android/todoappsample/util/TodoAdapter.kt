@@ -1,10 +1,11 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.util
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import androidx.databinding.DataBindingUtil
+import com.websarva.wings.android.todoappsample.appif.Todo
 import com.websarva.wings.android.todoappsample.databinding.ListTodoItemBinding
 
 /**

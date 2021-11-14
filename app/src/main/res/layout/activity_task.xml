@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/light_cyan"
     android:padding="10dp"
-    tools:context=".TaskActivity">
+    tools:context=".view.detail.TaskActivity">
 
     <FrameLayout
         android:id="@+id/container"

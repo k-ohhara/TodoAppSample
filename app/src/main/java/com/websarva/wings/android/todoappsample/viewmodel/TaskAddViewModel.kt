@@ -1,9 +1,11 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.websarva.wings.android.todoappsample.appif.Todo
+import com.websarva.wings.android.todoappsample.model.OpenHelper
 
 /**
  * タスク作成画面のViewModel

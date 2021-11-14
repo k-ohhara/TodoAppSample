@@ -2,17 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".TodoListFragment">
+    tools:context=".view.main.TodoListFragment">
 
     <data>
 
         <variable
             name="todoListViewModel"
-            type="com.websarva.wings.android.todoappsample.TodoListViewModel" />
+            type="com.websarva.wings.android.todoappsample.viewmodel.TodoListViewModel" />
 
         <variable
             name="createTodoViewModel"
-            type="com.websarva.wings.android.todoappsample.TaskAddViewModel" />
+            type="com.websarva.wings.android.todoappsample.viewmodel.TaskAddViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

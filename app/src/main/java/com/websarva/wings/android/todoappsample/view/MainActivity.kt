@@ -1,7 +1,9 @@
-package com.websarva.wings.android.todoappsample
+package com.websarva.wings.android.todoappsample.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.websarva.wings.android.todoappsample.R
+import com.websarva.wings.android.todoappsample.view.main.TodoListFragment
 
 /**
  * MainActivity

@@ -6,7 +6,7 @@
 
         <variable
             name="taskAddViewModel"
-            type="com.websarva.wings.android.todoappsample.TaskAddViewModel" />
+            type="com.websarva.wings.android.todoappsample.viewmodel.TaskAddViewModel" />
     </data>
 
     <LinearLayout
